@@ -1,5 +1,5 @@
-const express = require('express');
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import { sign, verify } from 'jsonwebtoken';
 
 const app = express();
 
@@ -29,7 +29,7 @@ app.listen(3000);
 
 function verifyJWTToken(token) {
   return new Promise((resolve, reject) => {
-    jwt.verify(token, secret, (err, decodedToken) => {
+    verify(token, secret, (err, decodedToken) => {
       if (err || !decodedToken) {
         return reject(err);
       }
@@ -40,7 +40,7 @@ function verifyJWTToken(token) {
 }
 
 function createJWToken(user) {
-  const token = jwt.sign(
+  const token = sign(
     {
       data: { user, pass: '123' },
     },
@@ -53,3 +53,5 @@ function createJWToken(user) {
 
   return token;
 }
+
+export default app;

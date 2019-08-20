@@ -29,3 +29,5 @@ app.listen(3000, () => {
   console.log('/test route should log a message : "in"');
   console.log('Middleware should log a message : "after"');
 });
+
+export default app;
