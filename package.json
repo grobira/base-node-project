@@ -1,5 +1,5 @@
 {
-  "name": "master-pocs",
+  "name": "base-project",
   "version": "1.0.0",
   "description": "This is a super repository to test librarys and some features.",
   "main": "index.js",
